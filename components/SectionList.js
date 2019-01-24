@@ -57,7 +57,7 @@ export default class SectionList extends Component {
     const targetY = ev.pageY;
     const { y, width, height } = this.measure;
     const index = (Math.floor(ev.locationY / height));
-    if (index >= this.props.sections.length) {
+    if (index >= this.props.sections.length || index < 0) {
       return;
     }
 
@@ -88,7 +88,7 @@ export default class SectionList extends Component {
     this.fixSectionItemMeasure();
   }
 
-  // fix bug when change data 
+  // fix bug when change data
   componentDidUpdate() {
     this.fixSectionItemMeasure();
   }
