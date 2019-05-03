@@ -226,6 +226,7 @@ export default class SelectableSectionsListView extends Component {
     } else {
       sectionList = !this.props.hideSectionList ?
         <SectionList
+          initialNumToRender={26}
           style={this.props.sectionListStyle}
           onSectionSelect={this.scrollToSection}
           sections={sections}
