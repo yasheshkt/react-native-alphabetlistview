@@ -216,7 +216,7 @@ export default class SelectableSectionsListView extends Component {
     let renderSectionHeader;
     let dataSource;
     let sections = Object.keys(data);
-
+    let lengthOfJson = Object.keys(data).length;
     if (typeof(this.props.compareFunction) === "function") {
       sections = sections.sort(this.props.compareFunction);
     }
@@ -226,7 +226,7 @@ export default class SelectableSectionsListView extends Component {
     } else {
       sectionList = !this.props.hideSectionList ?
         <SectionList
-          initialNumToRender={26}
+          initialNumToRender={lengthOfJson}
           style={this.props.sectionListStyle}
           onSectionSelect={this.scrollToSection}
           sections={sections}
@@ -264,8 +264,8 @@ export default class SelectableSectionsListView extends Component {
     return (
       <View ref="view" style={[styles.container, this.props.style]}>
         <ListView
-          pageSize={26}		
-          initialListSize={26}        
+          pageSize={lengthOfJson}		
+          initialListSize={lengthOfJson}        
           ref="listview"
           {...props}
         />
