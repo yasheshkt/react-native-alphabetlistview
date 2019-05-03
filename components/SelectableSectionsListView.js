@@ -264,8 +264,9 @@ export default class SelectableSectionsListView extends Component {
     return (
       <View ref="view" style={[styles.container, this.props.style]}>
         <ListView
-          pageSize={lengthOfJson}		
-          initialListSize={lengthOfJson}        
+          //pageSize and initialListSize was made static to load all the contacts at once
+          pageSize={100}		
+          initialListSize={500}        
           ref="listview"
           {...props}
         />
