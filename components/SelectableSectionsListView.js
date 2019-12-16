@@ -266,7 +266,8 @@ export default class SelectableSectionsListView extends Component {
         <ListView
           //pageSize and initialListSize was made static to load all the contacts at once
           pageSize={100}		
-          initialListSize={500}        
+          initialListSize={500}    
+          stickySectionHeadersEnabled={true}    
           ref="listview"
           {...props}
         />
